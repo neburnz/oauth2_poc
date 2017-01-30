@@ -14,11 +14,18 @@ namespace resourceServer
         public IHttpActionResult Get()
         {
             var caller = User as ClaimsPrincipal;
+            var subjectClaim = caller.FindFirst("sub");
+
+            if (subjectClaim == null)
+            {
+                return new HttpActionResult(HttpStatusCode.InternalServerError, "error message");
+            }
 
             return Json(new
             {
                 message = "OK computer",
-                client = caller.FindFirst("client_id").Value
+                client = caller.FindFirst("client_id").Value,
+                subject = subjectClaim.Value
             });
         }
     }

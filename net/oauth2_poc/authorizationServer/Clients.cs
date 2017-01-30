@@ -15,14 +15,14 @@ namespace authorizationServer
             {
                 new Client
                 {
-                    ClientId = "clientOnly",
-                    ClientName = "API1 - Client Only",
+                    ClientId = "resourceOwnerPasswordCredentials",
+                    ClientName = "API1 - Resource Owner Password Credentials",
                     Enabled = true,
                     AccessTokenType = AccessTokenType.Reference,
-                    Flow = Flows.ClientCredentials,
+                    Flow = Flows.ResourceOwner,
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret("34E2E487-2954-4CFA-AC52-B6D048AA645D".Sha256())
+                        new Secret("095244F8-8125-4F8A-B7D3-5697BB2672FC".Sha256())
                     },
                     AllowedScopes = new List<string>
                     {

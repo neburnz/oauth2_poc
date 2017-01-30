@@ -21,11 +21,11 @@ namespace client
         {
             var client = new TokenClient(
                 "http://localhost:5000/connect/token",
-                "clientOnly",
-                "34E2E487-2954-4CFA-AC52-B6D048AA645D"
+                "resourceOwnerPasswordCredentials",
+                "095244F8-8125-4F8A-B7D3-5697BB2672FC"
                 );
 
-            return client.RequestClientCredentialsAsync("api1").Result;
+            return client.RequestResourceOwnerPasswordAsync("bob","secret","api1").Result;
         }
 
         static void CallApi(TokenResponse response)
