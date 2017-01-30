@@ -21,7 +21,7 @@ namespace client
         {
             var client = new TokenClient(
                 "http://localhost:5000/connect/token",
-                "clientOnly",
+                "clientCredentials",
                 "34E2E487-2954-4CFA-AC52-B6D048AA645D"
                 );
 

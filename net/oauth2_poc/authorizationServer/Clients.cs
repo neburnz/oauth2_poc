@@ -15,8 +15,8 @@ namespace authorizationServer
             {
                 new Client
                 {
-                    ClientId = "clientOnly",
-                    ClientName = "API1 - Client Only",
+                    ClientId = "clientCredentials",
+                    ClientName = "API1 - Client Credentials",
                     Enabled = true,
                     AccessTokenType = AccessTokenType.Reference,
                     Flow = Flows.ClientCredentials,
